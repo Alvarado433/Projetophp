@@ -1,0 +1,10 @@
+# Habilitar o mecanismo de reescrita
+RewriteEngine On
+
+# Definir a raiz do documento
+RewriteBase /
+
+# Redirecionar todas as requisições para index.php se o arquivo ou diretório não existir
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
